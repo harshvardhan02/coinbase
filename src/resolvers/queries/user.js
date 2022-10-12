@@ -1,5 +1,5 @@
-module.exports = async (_, { pageNumber, perPage }, { ERC20Coin }) => {
-  return await ERC20Coin.find()
+module.exports = async (_, { pageNumber, perPage }, { User }) => {
+  return await User.find()
     .sort({ name: 1 })
     .skip(pageNumber > 0 ? ((pageNumber - 1) * perPage) : 0)
     .limit(perPage)

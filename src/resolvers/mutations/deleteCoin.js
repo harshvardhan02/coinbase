@@ -1,6 +1,6 @@
-module.exports = async (_, { id }, { models }) => {
+module.exports = async (_, { id }, { ERC20Coin }) => {
   try {
-    const deleteCoin = await models.ERC20Coin.findByIdAndDelete({ _id: id });
+    const deleteCoin = await ERC20Coin.findByIdAndDelete({ _id: id });
     if (!deleteCoin) {
       return {
         userErrors: { message: "The coin with given id was not found" },

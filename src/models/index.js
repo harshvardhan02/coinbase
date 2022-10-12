@@ -1,6 +1,7 @@
-const { ERC20Coin } = require('./coin');
+const ERC20Coin = require('./coin');
+const User = require('./user');
 
-const models = { ERC20Coin }
 module.exports = {
-  models
+  ERC20Coin,
+  User
 }

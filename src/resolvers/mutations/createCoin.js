@@ -1,6 +1,6 @@
-module.exports = async (_, { input }, { models }) => {
+module.exports = async (_, { input }, { ERC20Coin }) => {
   try {
-    let ERC20CoinToFind = await models.ERC20Coin.findOne(input);
+    let ERC20CoinToFind = await ERC20Coin.findOne(input);
 
     if (ERC20CoinToFind) {
       return {
@@ -9,7 +9,7 @@ module.exports = async (_, { input }, { models }) => {
       }
     }
 
-    ERC20CoinToCreate = new models.ERC20Coin(input)
+    ERC20CoinToCreate = new ERC20Coin(input)
 
     ERC20CoinToCreate = await ERC20CoinToCreate.save();
 

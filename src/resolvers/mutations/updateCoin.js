@@ -1,6 +1,6 @@
-module.exports = async (_, { id, input }, { models }) => {
+module.exports = async (_, { id, input }, { ERC20Coin }) => {
   try {
-    const ERC20CoinToUpdate = await models.ERC20Coin.findByIdAndUpdate(id, {
+    const ERC20CoinToUpdate = await ERC20Coin.findByIdAndUpdate(id, {
       name: input.name
     }, { new: true });
     if (!ERC20CoinToUpdate) {

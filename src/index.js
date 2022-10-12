@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
-const models = require('./models/coin');
+const { ERC20Coin, User } = require('./models');
 const mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost:27017/coinbase', {
@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/coinbase', {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: { models }
+  context: { ERC20Coin, User }
 });
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
