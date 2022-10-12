@@ -6,7 +6,7 @@ const erc20CoinSchema = new Schema({
     type: String,
     trim: true
   }
-});
+}, { timestamps: true, versionKey: false });
 
 const ERC20Coin = mongoose.model("ERC20Coin", erc20CoinSchema);
 module.exports = { ERC20Coin };

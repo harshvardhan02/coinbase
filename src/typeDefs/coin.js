@@ -5,6 +5,8 @@ module.exports = gql`
     type ERC20Coin{
         id: ID!
         name: String!
+        createdAt: String!
+        updatedAt: String!
     }
     type Query{
         coins(pageNumber: Int, perPage: Int): [ERC20Coin!]!
