@@ -1,6 +1,4 @@
-const createCoin = require('./createCoin');
-const updateCoin = require('./updateCoin');
-const deleteCoin = require('./deleteCoin');
+const { createCoin, updateCoin, deleteCoin } = require('./coin')
 const { createUser, updateUser, deleteUser } = require('./user')
 
 module.exports = {
